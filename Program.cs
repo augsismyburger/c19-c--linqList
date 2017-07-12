@@ -31,37 +31,37 @@ namespace LinqList
             };
             // Using Custom Types
             List<Customer> customers = new List<Customer>() {
-            new Customer(){ Name="Bob Lesman", Balance=80345.66, Bank="FTB"},
-            new Customer(){ Name="Joe Landy", Balance=9284756.21, Bank="WF"},
-            new Customer(){ Name="Meg Ford", Balance=487233.01, Bank="BOA"},
-            new Customer(){ Name="Peg Vale", Balance=7001449.92, Bank="BOA"},
-            new Customer(){ Name="Mike Johnson", Balance=790872.12, Bank="WF"},
-            new Customer(){ Name="Les Paul", Balance=8374892.54, Bank="WF"},
-            new Customer(){ Name="Sid Crosby", Balance=957436.39, Bank="FTB"},
-            new Customer(){ Name="Sarah Ng", Balance=56562389.85, Bank="FTB"},
-            new Customer(){ Name="Tina Fey", Balance=1000000.00, Bank="CITI"},
-            new Customer(){ Name="Sid Brown", Balance=49582.68, Bank="CITI"}
+                new Customer(){ Name="Bob Lesman", Balance=80345.66, Bank="FTB"},
+                new Customer(){ Name="Joe Landy", Balance=9284756.21, Bank="WF"},
+                new Customer(){ Name="Meg Ford", Balance=487233.01, Bank="BOA"},
+                new Customer(){ Name="Peg Vale", Balance=7001449.92, Bank="BOA"},
+                new Customer(){ Name="Mike Johnson", Balance=790872.12, Bank="WF"},
+                new Customer(){ Name="Les Paul", Balance=8374892.54, Bank="WF"},
+                new Customer(){ Name="Sid Crosby", Balance=957436.39, Bank="FTB"},
+                new Customer(){ Name="Sarah Ng", Balance=56562389.85, Bank="FTB"},
+                new Customer(){ Name="Tina Fey", Balance=1000000.00, Bank="CITI"},
+                new Customer(){ Name="Sid Brown", Balance=49582.68, Bank="CITI"}
             };
 
-            var richPeople = 
-            from peeps in customers
-            where peeps.Balance >= 1000000
-            select peeps;
+            IEnumerable<Customer> richPeople = 
+                from peeps in customers
+                where peeps.Balance >= 1000000
+                select peeps;
 
             // foreach (Customer person in richPeople) {
             //     Console.WriteLine($"{person.Name} has ${person.Balance} in {person.Bank}");
             // }
-            var millionaires = customers.GroupBy(y => y.Bank);
+            IEnumerable<Customer> millionaires = customers.GroupBy(y => y.Bank);
 
             // foreach(var bank in millionaires) {
             //     Console.WriteLine(bank.Key + " : " + bank.Count(y => y.Balance >= 1000000));
             // }
 
             var millionaireReport = 
-            from c in customers
-            where c.Balance >= 1000000
-            join b in banks on c.Bank equals b.Symbol
-            select new {Bank = b.Name, Money = c.Balance};
+                from c in customers
+                where c.Balance >= 1000000
+                join b in banks on c.Bank equals b.Symbol
+                select new {Bank = b.Name, Money = c.Balance};
 
             // richPeople.Join(bankList, Key => richPeople, Bank => bankList);
 
@@ -73,7 +73,7 @@ namespace LinqList
             // Find the words in the collection that start with the letter 'L'
             List<string> fruits = new List<string>() {"Lemon", "Apple", "Orange", "Lime", "Watermelon", "Loganberry"};
 
-            var LFruits = 
+            IEnumerable<string> LFruits = 
                 from fruit in fruits
                 // where fruit.Substring(0, 1) == ("L")
                 where fruit.StartsWith("L")
@@ -88,7 +88,7 @@ namespace LinqList
                 15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
             };
 
-            var fourSixMultiples = numbers.Where((digit) => digit % 4 == 0 || digit % 6 == 0);
+            IEnumerable<int> fourSixMultiples = numbers.Where((digit) => digit % 4 == 0 || digit % 6 == 0);
             foreach(int thing in fourSixMultiples) {
                 // Console.WriteLine(thing);
             }
@@ -102,7 +102,7 @@ namespace LinqList
                 "Francisco", "Tre" 
             };
 
-            var descend = 
+            IEnumerable<string> descend = 
                 from name in names 
                 orderby name descending 
                 select name;
@@ -116,7 +116,7 @@ namespace LinqList
                 15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
             };
 
-            var ascend = 
+            IEnumerable<int> ascend = 
                 from num in newNumbers
                 orderby num ascending
                 select num;
@@ -162,7 +162,7 @@ namespace LinqList
                 66, 12, 8, 27, 82, 34, 7, 50, 19, 46, 81, 23, 30, 4, 68, 14
             };
 
-            var notSquare = wheresSquaredo.TakeWhile((num) => Math.Sqrt(num) %1 != 0);
+            IEnumerable<int> notSquare = wheresSquaredo.TakeWhile((num) => Math.Sqrt(num) %1 != 0);
                 
             foreach(var i in notSquare) {
                 // Console.WriteLine(i);
