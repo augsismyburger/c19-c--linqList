@@ -1,0 +1,8 @@
+C:\Users\matth\workspace\seeSharpExercises\LinqList\bin\Debug\netcoreapp1.1\LinqList.deps.json
+C:\Users\matth\workspace\seeSharpExercises\LinqList\bin\Debug\netcoreapp1.1\LinqList.runtimeconfig.json
+C:\Users\matth\workspace\seeSharpExercises\LinqList\bin\Debug\netcoreapp1.1\LinqList.runtimeconfig.dev.json
+C:\Users\matth\workspace\seeSharpExercises\LinqList\bin\Debug\netcoreapp1.1\LinqList.dll
+C:\Users\matth\workspace\seeSharpExercises\LinqList\bin\Debug\netcoreapp1.1\LinqList.pdb
+C:\Users\matth\workspace\seeSharpExercises\LinqList\obj\Debug\netcoreapp1.1\LinqList.AssemblyInfo.cs
+C:\Users\matth\workspace\seeSharpExercises\LinqList\obj\Debug\netcoreapp1.1\LinqList.dll
+C:\Users\matth\workspace\seeSharpExercises\LinqList\obj\Debug\netcoreapp1.1\LinqList.pdb
